@@ -1,0 +1,5 @@
+*.sch linguist-detectable=true
+*.epf linguist-detectable=true
+*.brd linguist-detectable=true
+*.py linguist-detectable=true
+*.pro linguist-detectable=false
