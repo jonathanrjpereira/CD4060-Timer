@@ -43,13 +43,13 @@ The CD4060 consists of an oscillator section and 14 ripple carry binary counter 
 
 ![CD4060 RC Oscillator](https://github.com/jonathanrjpereira/CD4060-Timer/blob/master/img/ICBD.png)
 
-R2 must be between satisfy the following equation: ![R2 R1](https://latex.codecogs.com/png.latex?2R_%7B1%7D%5Cleq%20R_%7B2%7D%20%5Cleq%2010R_%7B1%7D) 
+R2 must satisfy the following equation: ![R2 R1](https://latex.codecogs.com/png.latex?2R_%7B1%7D%5Cleq%20R_%7B2%7D%20%5Cleq%2010R_%7B1%7D)
 
 ![time](https://latex.codecogs.com/png.latex?%5Clarge%20Time%20%3D%20t%20%3D%20%5Cfrac%7B2%5E%7Bn%7D%7D%7Bf_%7Bosc%7D%7D)
 
 where n is the Output Number i.e. ![Qn](https://latex.codecogs.com/png.latex?%5Clarge%20Q_%7Bn%7D)
 
-![Fosc](https://latex.codecogs.com/png.latex?%5Clarge%20f_%7Bosc%7D%20%3D%20%5Cfrac%7B1%7D%7B2.2%20%5Ctimes%20R%20%5Ctimes%20C%7D)
+![Fosc](https://latex.codecogs.com/png.latex?f_%7Bosc%7D%20%3D%20%5Cfrac%7B1%7D%7B2.2%20%5Ctimes%20R_%7B1%7D%20%5Ctimes%20C_%7BX%7D%7D)
 
 where 2.2 is the internal propagation delay.
 
@@ -63,29 +63,42 @@ The Timer IC requires the external RC network to be preconfigured in order to ge
 
 The table below shows the timing cycle of each output calculated by using the formulae given above.
 
-![CD4060 Timer Resistor Calculation](https://github.com/jonathanrjpereira/CD4060-Timer/blob/master/img/sch.png)
+![CD4060 Timer Resistor Calculation](https://github.com/jonathanrjpereira/CD4060-Timer/blob/master/img/time.png)
 
+We can see that if we choose the value of R1 to be 1.9MΩ, we can obtain an output that varies from 14.79≈15sec to 4hr.
 
+Similarly if we choose R1 to be 10.9MΩ, we obtain an output that varies from 1.4min to 24hr.
 
+I wrote a small [Python script](https://github.com/jonathanrjpereira/CD4060-Timer/blob/master/time.py) to calculate the time delay for various resistance values including 1.9MΩ and 10MΩ.
 
-![Schematic](https://github.com/jonathanrjpereira/CD4060-Timer/blob/master/img/sch.png)
+![Schematic CD4060 Timer Circuit](https://github.com/jonathanrjpereira/CD4060-Timer/blob/master/img/sch.png)
 
-The LM555 has a maximum typical supply voltage rating of 16V while the relay's armature coil is enabled at 12V. Hence a 12V power supply is used to minimize the number of components such as linear voltage regulators. When pin 2 of the LM555 is triggered (by shorting it to ground) through the momentary switch S1, the timer is started.
+As shown in the Resistor Calculation chart, we can get different time delays from the same output pins by simply changing the value of R. But we must also satisfy this equation ![R2 R1](https://latex.codecogs.com/png.latex?2R_%7B1%7D%5Cleq%20R_%7B2%7D%20%5Cleq%2010R_%7B1%7D) as explained earlier.
 
-The timer generates an output pulse with an ON time period determined by the RC network i.e t = 1.1RC . In this case the fixed value of the capacitor is 100uF. The value of R consists of a 10KΩ resistor in series with a 1MΩ potentiometer. We can vary the potentiometer to change the time period of the output pulse.
+From this equation, we learn that if R = 1.9MΩ (1MΩ + 910KΩ), we must connect a suitable resistance of approximately 3.8MΩ-19MΩ to pin 11. Similarly if
+R = 10.9MΩ (10MΩ + 910KΩ), we must connect a suitable resistance of approximately 21.8MΩ-109MΩ to pin 11. Hence we have chosen standard resistor values of 10MΩ and 22MΩ respectively.
 
-For example, if the potentiometer is set to 0Ω, the value of R is equal to 10KΩ.
-Hence t = 1.1 x 10K x 100u = 1 second.
+We use a DPDT switch to toggle between these two resistor combinations. Note that the value of Cx i.e C5 is a constant 0.22uF and does not change by toggling the switch.
 
-But if the pot is set to 1MΩ, the value of R is equal to 1MΩ + 10KΩ = 1010KΩ.
-Hence t = 1.1 x 1010K x 100u = 100 seconds.
+A 10-pin DIP switch is used to select a single output pin and connect it to the relay. Hence only when this pin goes HIGH, will the relay get activated.
 
-When pin 4 of the LM555 is triggered (by shorting it to ground) through the momentary switch S2, the timer is reset.
+C4 and R12 reset the timer when the circuit is turned ON through switch S4. The circuit can be reset (while being ON) by pressing the momentary switch S2.
 
-When the timer starts, the relay turns ON. Hence the Common(COM) terminal of the relay is shorted to the Normally Open (NO) terminal. A high power load can be connected to this terminal such as a light bulb or water pump. A transistor Q1 acts as a switch an ensures sufficient drive current is provided to the relay. Diode D1 acts as a flyback diode which protects the transistor Q1 from voltage spikes caused by the relay coil.
+The 7805 regulates the supply voltage from a 9V/12V source and LED11 indicates that the circuit is turned ON.
 
-LED2 turns on in order to indicate when the relay is turned ON. LED1 indicates the circuit is powered ON. An SPDT switch S3 is used to switch the circuit ON. Capacitors C2 and C4 are used to filter noise in the supply line.
+High power loads can be connected to the relays output terminals JP2. When the relay is not activated, the Common(COM) terminal is connected to Normally Closed(NC) terminal. But when the relay is activated, the Common(COM) terminal is connected to Normally Open(NO) terminal. LED12 is used to indicate whether the relay has been activated.
 
+Transistor T1 acts as a switch an ensures sufficient drive current is provided to the relay. Diode D11 acts as a flyback diode which protects the transistor T1 from voltage spikes caused by the relay coil.
+
+Capacitor's C1, C2 & C3 are used to filter noise in the supply line.
+
+![Board](https://github.com/jonathanrjpereira/CD4060-Timer/blob/master/img/brd.png)
+
+You can **Order the PCB:** []()
+
+![Printable](https://github.com/jonathanrjpereira/CD4060-Timer/blob/master/img/print1.png)
+
+Or you can printout the [PDF file](https://github.com/jonathanrjpereira/CD4060-Timer/blob/master/img/printable.pdf) and make your own PCB using the [Iron-on method]().
 
 ## Contributing🛠
 Are you an engineer or hobbyist who has a great idea for a new feature in this project? Maybe you have a good idea for a bug fix? Feel free to grab our code & schematics from Github and tinker with it. Don't forget to smash ⭐️ & the Pull Request button.
