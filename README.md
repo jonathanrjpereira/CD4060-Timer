@@ -8,10 +8,9 @@ The time delay can be easily changed to control the state of any device connecte
 ## Electronic Components
 | Qty | Component | Buy |
 | ------------- | ------------- | ------------- |
-| 1 | 555 |[AliExpress](http://s.click.aliexpress.com/e/sCv1ACC) |
+| 1 | CD4060 |[AliExpress](http://s.click.aliexpress.com/e/sCv1ACC) |
 | 2 | 3KΩ Resistor |[AliExpress](http://s.click.aliexpress.com/e/bh4eqrQs) |
 | 4 | 10KΩ Resistor |[AliExpress](http://s.click.aliexpress.com/e/bh4eqrQs) |
-| 1 | 1MΩ Potentiometer |[AliExpress](http://s.click.aliexpress.com/e/bR23nRuG) |
 | 1 | IN4004 Diode |[AliExpress](http://s.click.aliexpress.com/e/HW1fm16) |
 | 2 | Tactile Momentary Push Buttons |[AliExpress](http://s.click.aliexpress.com/e/c77Ajrpq) |
 | 2 | 5mm LED |[AliExpress](http://s.click.aliexpress.com/e/wuFpLXS) |
@@ -86,13 +85,13 @@ C4 and R12 reset the timer when the circuit is turned ON through switch S4. The 
 
 The 7805 regulates the supply voltage from a 9V/12V source and LED11 indicates that the circuit is turned ON.
 
-High power loads can be connected to the relays output terminals JP2. When the relay is not activated, the Common(COM) terminal is connected to Normally Closed(NC) terminal. But when the relay is activated, the Common(COM) terminal is connected to Normally Open(NO) terminal. LED12 is used to indicate whether the relay has been activated.
+High power loads can be connected to the relays output terminals J1. When the relay is not activated, the Common(COM) terminal is connected to Normally Closed(NC) terminal. But when the relay is activated, the Common(COM) terminal is connected to Normally Open(NO) terminal. LED12 is used to indicate whether the relay has been activated.
 
 Transistor T1 acts as a switch an ensures sufficient drive current is provided to the relay. Diode D11 acts as a flyback diode which protects the transistor T1 from voltage spikes caused by the relay coil.
 
 Capacitor's C1, C2 & C3 are used to filter noise in the supply line.
 
-![Board](https://github.com/jonathanrjpereira/CD4060-Timer/blob/master/img/brd.png)
+![CD4060 Timer Board PCB](https://github.com/jonathanrjpereira/CD4060-Timer/blob/master/img/brd.png)
 
 You can **Order the PCB:** []()
 
