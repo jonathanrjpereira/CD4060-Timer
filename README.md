@@ -36,28 +36,39 @@ The time delay can be easily changed to control the state of any device connecte
 
 The CD4060 consists of an oscillator section and 14 ripple carry binary counter stages. The oscillator configuration allows design of RC oscillator circuits. A RESET input is provided which resets the counter to the all-0's state and disables the oscillator. The counters are reset to the zero state by a logical “1” at the reset input independent of clock. The counters are advanced one count on the negative transition of each clock pulse.
 
-![Pinout](https://github.com/jonathanrjpereira/555-Timer-1sec-to-100sec/blob/master/img/pinout.png)
-![Pin Description](https://github.com/jonathanrjpereira/555-Timer-1sec-to-100sec/blob/master/img/pindescription.png)
+![CD4060 Pinout](https://github.com/jonathanrjpereira/CD4060-Timer/blob/master/img/pinout.png)
+![CD4060 Pin Description](https://github.com/jonathanrjpereira/CD4060-Timer/blob/master/img/pindescription.png)
 
 **Timing Cycle:**
 
-![](https://latex.codecogs.com/png.latex?%5Clarge%20Time%20%3D%20t%20%3D%20%5Cfrac%7B2%5E%7Bn%7D%7D%7Bf_%7Bosc%7D%7D)
+![CD4060 RC Oscillator](https://github.com/jonathanrjpereira/CD4060-Timer/blob/master/img/ICBD.png)
 
-where n is the Output Number i.e. ![](https://latex.codecogs.com/png.latex?%5Clarge%20Q_%7Bn%7D)
+R2 must be between satisfy the following equation: ![R2 R1](https://latex.codecogs.com/png.latex?2R_%7B1%7D%5Cleq%20R_%7B2%7D%20%5Cleq%2010R_%7B1%7D) 
+
+![time](https://latex.codecogs.com/png.latex?%5Clarge%20Time%20%3D%20t%20%3D%20%5Cfrac%7B2%5E%7Bn%7D%7D%7Bf_%7Bosc%7D%7D)
+
+where n is the Output Number i.e. ![Qn](https://latex.codecogs.com/png.latex?%5Clarge%20Q_%7Bn%7D)
+
+![Fosc](https://latex.codecogs.com/png.latex?%5Clarge%20f_%7Bosc%7D%20%3D%20%5Cfrac%7B1%7D%7B2.2%20%5Ctimes%20R%20%5Ctimes%20C%7D)
+
+where 2.2 is the internal propagation delay.
+
+## Circuit
+
+![CD4060 Timer Block Diagram](https://github.com/jonathanrjpereira/CD4060-Timer/blob/master/img/BD.png)
+
+The Timer IC requires the external RC network to be preconfigured in order to generate proper timing oscillations. External resets may be used to reset the timer. The time selector is configured to change the RC network value. The high power appliances are turned on when the relay is activated.
+
+**Resistor Calculation:**
+
+The table below shows the timing cycle of each output calculated by using the formulae given above.
+
+![CD4060 Timer Resistor Calculation](https://github.com/jonathanrjpereira/CD4060-Timer/blob/master/img/sch.png)
 
 
 
-**Circuit:**
 
-![Monostable Waveform](https://github.com/jonathanrjpereira/555-Timer-1sec-to-100sec/blob/master/img/wave.png)
-
-The figure above shows the waveforms generated in this mode of operation. Since the charge and the threshold level of the comparator are both directly proportional to supply voltage, the timing interval is independent of supply.
-
-![Block Diagram](https://github.com/jonathanrjpereira/555-Timer-1sec-to-100sec/blob/master/img/BD.png)
-
-Separate input triggers are used to start and reset the timer. The RC network determines the period of the output pulse. High power appliances can be controlled through a relay acting as a switch.
-
-![Schematic](https://github.com/jonathanrjpereira/555-Timer-1sec-to-100sec/blob/master/img/sch.png)
+![Schematic](https://github.com/jonathanrjpereira/CD4060-Timer/blob/master/img/sch.png)
 
 The LM555 has a maximum typical supply voltage rating of 16V while the relay's armature coil is enabled at 12V. Hence a 12V power supply is used to minimize the number of components such as linear voltage regulators. When pin 2 of the LM555 is triggered (by shorting it to ground) through the momentary switch S1, the timer is started.
 
