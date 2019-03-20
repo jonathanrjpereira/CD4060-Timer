@@ -14,8 +14,10 @@ The time delay can be easily changed to control the state of any device connecte
 | 1 | 10P DIP Switch |[AliExpress](http://s.click.aliexpress.com/e/bWTOIl7K) |
 | 1 | BC547 PNP Transistor |[AliExpress](http://s.click.aliexpress.com/e/bpL0Irsk) |
 | 12 | 1KΩ Resistor |[AliExpress](http://s.click.aliexpress.com/e/bh4eqrQs) |
-| 2 | 910KΩ,10MΩ Resistor |[AliExpress](http://s.click.aliexpress.com/e/bh4eqrQs) |
-| 1 | 3KΩ,100KΩ,1MΩ,22MΩ Resistor |[AliExpress](http://s.click.aliexpress.com/e/bh4eqrQs) |
+| 2 | 910KΩ Resistor |[AliExpress](http://s.click.aliexpress.com/e/bh4eqrQs) |
+| 1 | 3KΩ,100KΩ,1MΩ Resistor |[AliExpress](http://s.click.aliexpress.com/e/bh4eqrQs) |
+| 2 | 10MΩ Resistor |[AliExpress](http://s.click.aliexpress.com/e/bQYFOHo4) |
+| 1 | 22MΩ Resistor |[AliExpress](http://s.click.aliexpress.com/e/bQYFOHo4) |
 | 11 | IN4004 Diode |[AliExpress](http://s.click.aliexpress.com/e/HW1fm16) |
 | 1 | Tactile Momentary Push Buttons |[AliExpress](http://s.click.aliexpress.com/e/c77Ajrpq) |
 | 12 | 5mm LED |[AliExpress](http://s.click.aliexpress.com/e/wuFpLXS) |
