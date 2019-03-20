@@ -8,19 +8,26 @@ The time delay can be easily changed to control the state of any device connecte
 ## Electronic Components
 | Qty | Component | Buy |
 | ------------- | ------------- | ------------- |
-| 1 | CD4060 |[AliExpress](http://s.click.aliexpress.com/e/sCv1ACC) |
-| 2 | 3KΩ Resistor |[AliExpress](http://s.click.aliexpress.com/e/bh4eqrQs) |
-| 4 | 10KΩ Resistor |[AliExpress](http://s.click.aliexpress.com/e/bh4eqrQs) |
-| 1 | IN4004 Diode |[AliExpress](http://s.click.aliexpress.com/e/HW1fm16) |
-| 2 | Tactile Momentary Push Buttons |[AliExpress](http://s.click.aliexpress.com/e/c77Ajrpq) |
-| 2 | 5mm LED |[AliExpress](http://s.click.aliexpress.com/e/wuFpLXS) |
-| 2 | 100uF Capacitor |[AliExpress](http://s.click.aliexpress.com/e/c9FHzl5W) |
+| 1 | CD4060 |[AliExpress](http://s.click.aliexpress.com/e/kyO7qcg) |
+| 1 | IC Holder |[AliExpress](http://s.click.aliexpress.com/e/cHvnfsrA) |
+| 1 | 7805 Voltage Regulator |[AliExpress](http://s.click.aliexpress.com/e/b1D8MbCk) |
+| 1 | 10P DIP Switch |[AliExpress](http://s.click.aliexpress.com/e/bWTOIl7K) |
+| 1 | BC547 PNP Transistor |[AliExpress](http://s.click.aliexpress.com/e/bpL0Irsk) |
+| 12 | 1KΩ Resistor |[AliExpress](http://s.click.aliexpress.com/e/bh4eqrQs) |
+| 2 | 910KΩ,10MΩ Resistor |[AliExpress](http://s.click.aliexpress.com/e/bh4eqrQs) |
+| 1 | 3KΩ,100KΩ,1MΩ,22MΩ Resistor |[AliExpress](http://s.click.aliexpress.com/e/bh4eqrQs) |
+| 11 | IN4004 Diode |[AliExpress](http://s.click.aliexpress.com/e/HW1fm16) |
+| 1 | Tactile Momentary Push Buttons |[AliExpress](http://s.click.aliexpress.com/e/c77Ajrpq) |
+| 12 | 5mm LED |[AliExpress](http://s.click.aliexpress.com/e/wuFpLXS) |
+| 1 | 100uF Capacitor |[AliExpress](http://s.click.aliexpress.com/e/c9FHzl5W) |
+| 1 | 0.22uF,0.3uF Capacitor |[AliExpress](http://s.click.aliexpress.com/e/byQG0DZW) |
 | 2 | 0.1uF (100nF) Capacitor |[AliExpress](http://s.click.aliexpress.com/e/byQG0DZW) |
-| 1 | 2 Pin Screw Terminal |[AliExpress](http://s.click.aliexpress.com/e/bj5UNUs0) |
 | 1 | 3 Pin Screw Terminal |[AliExpress](http://s.click.aliexpress.com/e/bj5UNUs0) |
-| 1 | Relay |[AliExpress](http://s.click.aliexpress.com/e/xyrHlu8) |
-| 1 | 12VDC Adapter |[AliExpress](http://s.click.aliexpress.com/e/V0x0bms) |
+| 1 | 5V Relay |[AliExpress](http://s.click.aliexpress.com/e/xyrHlu8) |
 | 1 | SPDT Slide Switch |[AliExpress](http://s.click.aliexpress.com/e/cDjWUvjK) |
+| 1 | DPDT Slide Switch |[AliExpress](http://s.click.aliexpress.com/e/bCi1v5gk) |
+| 1 | 9V Battery Holder |[AliExpress](http://s.click.aliexpress.com/e/c3jbp72Y) |
+| 1 | 9V Battery |[AliExpress](http://s.click.aliexpress.com/e/bbDirGHE) |
 | 1 | PCB |[AliExpress](http://s.click.aliexpress.com/e/dhgwzKY) |
 
 
